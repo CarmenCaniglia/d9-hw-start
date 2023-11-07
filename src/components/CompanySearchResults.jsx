@@ -40,16 +40,6 @@ const CompanySearchResults = () => {
           {jobs.map((jobData) => (
             <Job key={jobData._id} data={jobData} />
           ))}
-          <button
-            onClick={() => {
-              dispatch({
-                type: "ADD-TO_FAVOURITES",
-                payload: jobs,
-              });
-            }}
-          >
-            Add to Favorites
-          </button>
         </Col>
       </Row>
     </Container>

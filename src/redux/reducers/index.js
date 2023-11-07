@@ -9,7 +9,21 @@ const mainReducer = (state = initialState, action) => {
     case "ADD_TO_FAVOURITES":
       return {
         ...state,
-        favourites: [...state.favourites, action.payload],
+        jobs: {
+          ...state.jobs,
+          content: [...state.jobs.content, action.payload],
+        },
+      };
+
+    case "REMOVE_FROM_FAVOURITES":
+      return {
+        ...state,
+        jobs: {
+          ...state.jobs,
+          content: state.favourite.content.filter(
+            (el, i) => i !== action.payload
+          ),
+        },
       };
 
     default:
